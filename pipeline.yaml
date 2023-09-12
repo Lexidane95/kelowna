@@ -16,12 +16,12 @@ pipeline {
         steps {
           OCIUploadArtifact(credentialsId: 'OCIDevOps-Credentials',
           uploadArtifactDetailsList: [[artifactPath: 'public.tar.gz',
-          repositoryId: 'ocid1.artifactrepository.oc1.ca-toronto-1.0.amaaaaaaer6lhqqax6nqqlta42wr6zeazzujxp2oxa7nspjmlkdf6qj6qzlq',
+          repositoryId: 'ocid1.artifactrepository.oc1.ca-montreal-1.0.amaaaaaaqme4t4iajld3lp5obaob2anof4l4fhgwdecig3h2gplrdttz3wcq',
           repositoryType: 'GENERIC',
           sourcePath: 'public.tar.gz',
           version: "1.$BUILD_NUMBER"],
           [artifactPath: 'deployment_spec.yaml',
-          repositoryId: 'ocid1.artifactrepository.oc1.ca-toronto-1.0.amaaaaaaer6lhqqax6nqqlta42wr6zeazzujxp2oxa7nspjmlkdf6qj6qzlq',
+          repositoryId: 'ocid1.artifactrepository.oc1.ca-montreal-1.0.amaaaaaaqme4t4iajld3lp5obaob2anof4l4fhgwdecig3h2gplrdttz3wcq',
           repositoryType: 'GENERIC',
           sourcePath: 'deployment_spec.yaml',
           version: "1.$BUILD_NUMBER"]
@@ -34,7 +34,7 @@ pipeline {
           credentialsId: 'OCIDevOps-Credentials',
           displayName: "testDeployment${BUILD_NUMBER}",
           endpoint: 'https://devops.ca-toronto-1.oci.oraclecloud.com',
-          pipelineId: 'ocid1.devopsdeploypipeline.oc1.ca-toronto-1.amaaaaaaer6lhqqat7qsakaunyl6lveafx5q7zl3j7e2gray36b3izjjt5qq',
+          pipelineId: 'ocid1.artifactrepository.oc1.ca-montreal-1.0.amaaaaaaqme4t4iajld3lp5obaob2anof4l4fhgwdecig3h2gplrdttz3wcq',
           pollingConfig: [timeoutSeconds: 600, "pollingIntervalSeconds" : 5], executionMode: 'SYNC'
           )
       }
